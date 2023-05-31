@@ -18,5 +18,5 @@ if [ $# = 1 ]; then
 fi
 
 python manage.py create_db
-
+kustomize build deployment\kustomize\overlays\common
 exec "$@"
