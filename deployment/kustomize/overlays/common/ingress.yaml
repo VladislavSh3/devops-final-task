@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sheverev-devops-final-task-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: sheverev.dacdevops.ru
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sheverev-devops-final-task-service
+                port:
+                  name: http
+  tls:
+    - hosts:
+      - sheverev.dacdevops.ru
+      secretName: sheverev-devops-final-task-cert

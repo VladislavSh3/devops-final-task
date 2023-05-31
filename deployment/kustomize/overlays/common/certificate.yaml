@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sheverev-devops-final-task-certificate
+  namespace: sheverev-devops-final-task
+spec:
+  dnsNames:
+  - 'sheverev.dacdevops.ru'
+  issuerRef:
+    kind: ClusterIssuer
+    name: yc-clusterissuer
+  secretName: sheverev-devops-final-task-cert
