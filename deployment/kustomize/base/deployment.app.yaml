@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
         - name: final-task-migrate
-          image: vladislavsh3/final_task_app
+          image: vladislavsh3/final_task_app: main
           args:
             - migrate
           envFrom:
@@ -24,7 +24,7 @@ spec:
                 name: sheverev-devops-final-task-postgres-secret
       containers:
         - name: final-task
-          image: vladislavsh3/final_task_app
+          image: vladislavsh3/final_task_app: main
           args:
             - gunicorn
           ports:
