@@ -17,5 +17,4 @@ if [ $# = 1 ]; then
     fi
 fi
 
-python manage.py create_db
 exec "$@"
