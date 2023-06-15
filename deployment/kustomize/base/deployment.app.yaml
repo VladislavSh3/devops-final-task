@@ -14,19 +14,9 @@ spec:
       labels:
         app: sheverev-devops-final-task
     spec:
-      initContainers:
-        - name: final-task-migrate
-          image: vladislavsh3/final_task_app:main
-          args:
-            - migrate
-          envFrom:
-            - secretRef:
-                name: sheverev-devops-final-task-postgres-secret
       containers:
         - name: final-task
           image: vladislavsh3/final_task_app:main
-          args:
-            - gunicorn
           ports:
             - name: http
               containerPort: 5000
